@@ -3,56 +3,62 @@
 <img width="638" height="1228" alt="image" src="https://github.com/user-attachments/assets/fcd12731-7d94-41f2-97f9-5606eb8a05b0" />
 Travel Companion App
 
-Travel Companion is an Android app I built for international travel.
-It helps with quick conversions you often need on the go — like currency, fuel, liquids, and temperature.
+Travel Companion App
 
-What it can do
-1) Conversions by category
+Travel Companion is a simple Android app made to help travellers with common conversions.
+When travelling between countries, you often need to convert things like currency, fuel usage, or temperature. This app brings those conversions together in one place so they are quick and easy to use.
 
-Currency: Uses fixed exchange rates (2026 set rates) for USD, AUD, EUR, JPY, GBP
+Features
+Multiple Conversion Types
 
-Fuel & distance:
+The app supports several categories of conversions.
 
-mpg → km/L
+Currency – converts between USD, AUD, EUR, JPY, and GBP using fixed exchange rates.
 
-gallons → litres
+Fuel and Distance – includes conversions such as mpg to km/L, gallons to litres, and nautical miles to kilometres.
 
-nautical miles → kilometres
+Temperature – supports conversions between Celsius, Fahrenheit, and Kelvin.
 
-Temperature: Celsius ↔ Fahrenheit ↔ Kelvin
+Input Validation
 
-2) Validation (based on SIT708 requirements)
+To make the app more stable and user-friendly, some basic checks are included.
 
-I added basic input checks so the app doesn’t crash and the result stays meaningful.
+Prevents crashes when the input field is empty or contains invalid values.
 
-Stops conversion when the input is empty or not a number (shows a Toast message)
+Shows a Toast message if the user tries to convert without entering a valid number.
 
-Detects when From and To units are the same, so it doesn’t do unnecessary calculation
+Detects when the From and To units are the same and avoids unnecessary calculations.
 
-Blocks negative values for fuel/distance conversions (because it doesn’t make sense in real use)
+Negative values are restricted for fuel and distance conversions because they do not make sense in real-world scenarios.
 
-3) UI
+User Interface
 
-Built using ScrollView + CardView, so it stays readable on different screen sizes
+The interface is designed to stay simple and easy to understand.
 
-When the user changes the category, the From/To spinners update automatically with the right units
+Uses ScrollView and CardView so the layout works well on different screen sizes.
 
-Tech notes
+The From and To dropdown menus update automatically when a new conversion category is selected.
+
+Results appear clearly at the bottom after pressing the Convert button.
+
+Technical Details
 
 Language: Kotlin
 
-Structure: Activity-based
+Architecture: Activity-based structure
 
-UI: Material components + Spinner + EditText
+UI Components: Material components, Spinner, EditText, Button, and TextView
 
-Input uses proper inputType (e.g., numberDecimal, numberSigned) depending on the conversion type.
+EditText fields use appropriate input types such as numberDecimal or numberSigned depending on the conversion type.
 
-How to use
+How to Use
 
-Pick a Category
+Select a conversion category
 
-Choose From and To
+Choose the From unit
 
-Enter a value
+Choose the To unit
 
-Tap Convert to see the result at the bottom
+Enter the value you want to convert
+
+Tap Convert to see the result
